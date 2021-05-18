@@ -52,7 +52,6 @@ function App() {
         for (let i = 0; i < totalBoardRows; i++) {
           for (let j = 0; j < totalBoardColumns; j++) {
             let neighbors = 0;
-
             operations.forEach(([x, y]) => {
               const newI = i + x;
               const newJ = j + y;
@@ -132,6 +131,9 @@ function App() {
               className="mt-2 rounded-0"
               onClick={() => {
                 setGrid(generateEmptyGrid());
+                if (runningRef.current) {
+                  setRunning(false);
+                }
                 setCounter(0);
               }}
             >
