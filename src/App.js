@@ -174,9 +174,9 @@ function App() {
                   key={`${i} - ${k}`}
                   style={{
                     minHeight: "16px",
-                    backgroundColor: grid[i][k] ? "pink" : "blue",
                     border: "1px solid black",
                   }}
+                  className={grid[i][k] ? "bg-danger" : "bg-light"}
                   onClick={() => {
                     const newGrid = produce(grid, (gridCopy) => {
                       gridCopy[i][k] = grid[i][k] ? 0 : 1;
